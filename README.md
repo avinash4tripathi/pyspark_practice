@@ -1,4 +1,4 @@
-# PySpark Practice Project
+# PySpark Practice 
 
 This created to learn and practice Apache Spark with Python using PySpark. The work focused on setting up the local environment on Windows, creating Spark sessions, loading sample employee data, and running SQL and DataFrame queries to explore data analysis patterns.
 
