@@ -9,7 +9,7 @@ display(df.limit(20))
 
 # Rename columns using withColumnRenamed
 df_renamed = (df
-     .withColumnRenamed("ano", "year")
+    .withColumnRenamed("ano", "year")
     .withColumnRenamed("mes", "month")
     .withColumnRenamed("estado", "state")
     .withColumnRenamed("numero", "fire_count")
