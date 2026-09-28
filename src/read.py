@@ -4,10 +4,10 @@ df = spark.table("demo")
 display(df)
 
 
-df.sal = df.withColumn(
-    "salary",
+df_sal = df.withColumn(
+    "Salary_category",
     (when(col("salary")>=80000,"High")
      .when(col("salary")>=50000,"Medium")
      .otherwise("Low"))
 )
-display(df.sal)
+display(df_sal) 
