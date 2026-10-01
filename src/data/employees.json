@@ -1,0 +1,42 @@
+[
+  {
+    "employee_id": 1001,
+    "department": "Finance",
+    "salary": 111552,
+    "city": "Bangalore",
+    "employee_name": "Abhishk"
+   
+  },
+  {
+    "employee_id": 1002,
+    "department": "Operations",
+    "salary": 58897,
+    "city": "Mumbai",
+    "employee_name": "Advik"
+   
+  },
+  {
+    "employee_id": 1003,
+    "department": "HR",
+    "salary": 103148,
+    "city": "Mumbai",
+    "employee_name": "Kashvi"
+    
+  },
+  {
+    "employee_id": 1004,
+    "department": "Operations",
+    "salary": 58483,
+    "city": "Mumbai",
+    "employee_name": "Avinas"
+    
+  },
+  {
+    "employee_id": 1005,
+    "department": "Operations",
+    "salary": 83555,
+    "city": "Pune",
+    "employee_name": "Prince"
+   
+  }
+]

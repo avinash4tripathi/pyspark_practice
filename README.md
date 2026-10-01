@@ -4,10 +4,9 @@ This created to learn and practice Apache Spark with Python using PySpark. The w
 
 ##  Overview
 
-The project demonstrates the following concepts:
+The project demonstrates the following PySpark concepts:
 
-- Creating a SparkSession
-- Creating a DataFrame from Python tuples
+- Creating a SparkSession and DataFrames from Python tuples
 - Registering a DataFrame as a temporary SQL table
 - Running SQL queries using Spark SQL
 - Filtering rows with WHERE conditions
@@ -15,11 +14,33 @@ The project demonstrates the following concepts:
 - Using DataFrame API operations instead of SQL
 - Inspecting Spark execution plans with EXPLAIN
 - Understanding lazy evaluation in Spark
+- Reading CSV and JSON files with PySpark
+- DataFrame transformations: `select()`, `filter()`, `drop()`, `withColumn()`, `withColumnRenamed()`, `when()`
+- Aggregations: `count()`, `countDistinct()`, `sum()`, `avg()`, `min()`, `max()`, `groupBy()` with multiple columns
+- All join types: inner, left, right, outer, full outer, cross, left semi, left anti
+- Window functions: `row_number()`, `rank()`, `dense_rank()`, `lag()`, `lead()`, running totals with `rowsBetween()`
+- Nested data: `explode()`, `posexplode()`, parsing JSON with `from_json()` and flattening struct/array fields
+- UDFs: regular Python UDFs with `udf()` and vectorized Pandas UDFs with `@pandas_udf`
+- Slowly Changing Dimensions (SCD): Type 1 (overwrite), Type 2 (full history), Type 3 (limited history) using Delta Table API
+- Reusable transformations with `applyInPandas()` and saving to Delta tables
 
-## Files in this project
 
-- `src/main.py` - Main PySpark script containing all examples and tests
-- `src/avg.sql` - SQL file with a simple SELECT query example
+```
+
+## Folders in this project
+
+| Folder | Description |
+| --- | --- |
+| `data/` | Sample datasets in CSV and JSON format — Amazon fire data, employee data, and orders — used as input by reading, transformation, and aggregation scripts |
+| `reading_practice/` | Reading data into Spark DataFrames from CSV files (`spark.read.csv()`), JSON files (`json.load()`), and existing Spark tables (`spark.table()`); also includes a `when()` salary categorization example |
+| `transformation/` | Core DataFrame transformations — `select()`, `filter()`, `drop()`, `withColumn()`, `withColumnRenamed()`, `when()`, and `regexp_extract()` on employee and Amazon fires datasets; also includes the main `pyspark_practice.py` script with SQL queries, `EXPLAIN` plan, and lazy evaluation demo |
+| `aggregations/` | Aggregation operations — `count()`, `countDistinct()`, `sum()`, `avg()`, `min()`, `max()`, `groupBy()` with single and multiple columns, and filtering after aggregation on employee and `demo` table data |
+| `join/` | All PySpark join types demonstrated on customer and sales/product DataFrames — inner, left, right, outer, full outer, cross, left semi, and left anti joins |
+| `Window/` | Window functions on employee data — `row_number()`, `rank()`, `dense_rank()`, `lag()`, `lead()`, running totals with `rowsBetween()`, and demonstrations of `partitionBy()` vs `orderBy()` |
+| `Nested_Date/` | Handling nested and array data — `explode()` to flatten arrays into rows, `posexplode()` for position-aware exploding, and `from_json()` to parse JSON strings with `explode()` to flatten nested struct/array fields |
+| `udf/` | User Defined Functions — regular Python UDF with `udf()` and vectorized Pandas UDF with `@pandas_udf` decorator, both computing string length on a name column |
+| `scd/` | Slowly Changing Dimensions — Type 1 (overwrite, no history), Type 2 (full history with `start_date`/`end_date`/`is_current` via Delta Table API), Type 3 (limited history with `previous_city` column), and a complete combined demo using Delta tables |
+| `reusable_transformation/` | Reusable transformation using `applyInPandas()` with `groupby()` to compute avg and max salary per person, saving results to a Delta managed table |
 
 ## What was fixed today
 

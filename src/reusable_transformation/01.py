@@ -34,3 +34,5 @@ display(result)
 
 # Save as managed table (no LOCATION needed)
 df.write.format("delta").mode("overwrite").saveAsTable("workspace.default.my_custom_df")
+
+
