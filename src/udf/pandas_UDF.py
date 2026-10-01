@@ -1,3 +1,6 @@
+# udf/pandas_UDF.py
+# Demonstrates vectorized Pandas UDF using @pandas_udf decorator to compute
+# string length on a name column, then adds the result as a new column.
 from pyspark.sql import SparkSession
 import pandas as pd
 from pyspark.sql.functions import pandas_udf
