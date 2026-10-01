@@ -1,6 +1,8 @@
+# reusable_transformation/01.py
+# Demonstrates reusable transformation using applyInPandas() with groupby()
+# to compute avg and max salary per person, saving results to a Delta managed table.
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 import pandas as pd
-#reusable
 claen_customer=[
     (1,"Avinsh","America",25000),
     (2,"Bhavesh","Canada",45000),
